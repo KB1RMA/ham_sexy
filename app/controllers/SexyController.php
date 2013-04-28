@@ -65,11 +65,20 @@ class SexyController extends \lithium\action\Controller {
 		$data = $this->request->data;
 
 		if ( array_key_exists( 'image', $data ) && !$data['image']['error'] ) {
-			$sexies = Sexies::create();
-			$sexies->save();
-			$sexies->saveImage($data['image']);
-			$sexies->save();
-			$id = $sexies->_id;
+			// Check if file is already uploaded
+			$hash = md5_file($data['image']['tmp_name']);
+			$exists = Sexies::find('first', array('conditions' => array( 'hash' => $hash ) ) );
+
+			// If the file doesn't exist, create a new document
+			if ( !count($exists) ) {
+				$sexies = Sexies::create();
+				$sexies->save();
+				$sexies->saveImage($data['image']);
+				$sexies->save();
+				$id = $sexies->_id;
+			} else {
+				$id = $exists->_id;
+			}
 		} else {
 			$error = array(
 				'code' => 1,

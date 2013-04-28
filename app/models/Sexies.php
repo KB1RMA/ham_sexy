@@ -13,7 +13,7 @@ class Sexies extends \lithium\data\Model {
 		$this->originalPath = $this->storagePath . $this->imagePath;
 	}
 
-	public function saveImage( $entity, $file ) {
+	public function saveImage( $entity, $file, $hash = null ) {
 		$ext = pathinfo($file['name'], PATHINFO_EXTENSION);
 
 		// Build new filename
@@ -24,6 +24,12 @@ class Sexies extends \lithium\data\Model {
 		if ( move_uploaded_file( $file['tmp_name'], $newFilePath ) ) {
 			$entity->file_name = $newFileName;
 			$entity->size = $file['size'];
+
+			if ( !$hash )
+				$entity->hash = md5_file($newFilePath);
+			else
+				$entity->hash = $hash;
+
 			return true;
 		}
 
