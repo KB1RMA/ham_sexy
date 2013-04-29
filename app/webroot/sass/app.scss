@@ -2,19 +2,19 @@
 @import "settings";
 
 // Comment out this import if you are customizing you imports below
-@import "foundation";
+//@import "foundation";
 
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
 
-// @import "foundation/foundation-global"; // *always required
-// @import "foundation/components/global"; // *always required
-// @import "foundation/components/grid";
-// @import "foundation/components/visibility";
+@import "foundation/foundation-global"; // *always required
+@import "foundation/components/global"; // *always required
+@import "foundation/components/grid";
+@import "foundation/components/visibility";
 // @import "foundation/components/block-grid";
-// @import "foundation/components/type";
-// @import "foundation/components/buttons";
-// @import "foundation/components/forms"; // *requires components/buttons
+@import "foundation/components/type";
+@import "foundation/components/buttons";
+@import "foundation/components/forms"; // *requires components/buttons
 // @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
 // @import "foundation/components/button-groups"; // *requires components/buttons
 // @import "foundation/components/dropdown-buttons"; // *requires components/buttons
@@ -55,13 +55,13 @@ body {
 }
 
 body > header {
-  width: 100%;
-  height: 100px;
-  position: fixed;
+	width: 100%;
+	height: 100px;
+	position: fixed;
 	top: 0;
 	left: 0;
-  z-index: 10;
-  background-image: url('../img/headerbackground.png');
+	z-index: 10;
+	background-image: url('../img/headerbackground.png');
 	@include box-shadow(0px 0px 14px 0px #000);
 	& hgroup {
 		width: 50%;
@@ -78,7 +78,7 @@ body > header {
 			font-size: 3.5em;
 			text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 		}
-		&	h2 {
+		& h2 {
 			font-family: 'Vollkorn', serif;
 			font-weight: 400;
 			font-style: italic;
@@ -90,19 +90,19 @@ body > header {
 			text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 		}
 	}
-	nav {
+	& nav {
 		width: 50%;
 		float: left;
 		text-align: right;
-		ul {
+		& ul {
 			display: inline-block;
 			list-style: none;
 			margin: 0;
 			padding-top: 34px;
 			white-space: nowrap;
-			li {
+			& li {
 				display: inline-block;
-				a {
+				& a {
 					text-decoration: none;
 					color: #fff;
 					font-family: 'Lato', sans-serif;
