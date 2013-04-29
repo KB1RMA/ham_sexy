@@ -1,5 +1,6 @@
 .DS_Store
 app/libraries/*
+app/config/bootstrap/connections.php
 app/resources/tmp/*
 app/webroot/.sass-cache/*
 app/webroot/images/*
