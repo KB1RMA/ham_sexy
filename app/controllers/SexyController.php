@@ -19,15 +19,15 @@ class SexyController extends \lithium\action\Controller {
 		} else {
 
 			// Otherwise, find a random image from the database
-			#$count = 0;
-			#while ( !$count ) {
+			$count = 0;
+			while ( !$count ) {
 				$sexies = Sexies::find('first', array(
 					'conditions' => array(
 						'random' => array( '$gte' => rand() ),
 					),
 				));
-			#	$count = count($sexies);
-			#}
+				$count = count($sexies);
+			}
 		}
 
 		return compact('sexies');
