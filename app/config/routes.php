@@ -34,6 +34,7 @@ if ($locales = Environment::get('locales')) {
  * @see app\controllers\PagesController
  */
 Router::connect('/upload', 'Sexy::upload');
+Router::connect('/comment', 'Sexy::comment');
 Router::connect('/edit/{:args}', 'Sexy::edit');
 Router::connect('/{:args}', 'Sexy::index');
 

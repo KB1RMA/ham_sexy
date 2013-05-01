@@ -33,24 +33,37 @@ class SexyController extends \lithium\action\Controller {
 		return compact('sexies');
 	}
 
-	public function edit( $editHash ) {
+	public function comment( $id = null ) {
 
-		$sexies = Sexies::find('first', array(
-			'conditions' => array(
-				'editHash' => $editHash,
-			)
-		));
+		if ($this->request->is('post')) {
 
-		if ( !count($sexies) )
-			return compact('sexies');
+			$data = $this->request->data;
+			$args = $this->request->args;
 
-		if ( $this->request->is('put') ) {
-			if($this->request->data && $sexies->save($this->request->data)) {
-				$saved = true;
-			}
+			$sexies = Sexies::find('first', array(
+				'conditions' => array(
+					'_id' => $data['id'],
+				)
+			));
+
+			if ( !count($sexies) )
+				return compact('sexies');
+
+			$sexies->comment(compact('data', 'args'));
+
+		} else {
+
+			return $this->redirect(array(
+				'controller' => 'Sexies',
+				'action' => 'index',
+				'_id' => $sexies->_id,
+			));
 		}
 
-		return compact('sexies', 'saved');
+		$this->render(array(
+			'type' => 'json',
+			'data' => compact('sexies')
+		));
 
 	}
 
@@ -65,6 +78,7 @@ class SexyController extends \lithium\action\Controller {
 		$data = $this->request->data;
 
 		if ( array_key_exists( 'image', $data ) && !$data['image']['error'] ) {
+
 			// Check if file is already uploaded
 			$hash = md5_file($data['image']['tmp_name']);
 			$exists = Sexies::find('first', array('conditions' => array( 'hash' => $hash ) ) );

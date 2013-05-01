@@ -11,7 +11,10 @@
 		<meta name="viewport" content="width=600, initial-scale=1, maximum-scale=1">
 
 
-		<?php echo $this->html->style(array('debug', 'normalize', 'app')); ?>
+		<?php echo $this->html->style(array('debug', 'normalize')); ?>
+		<?php $this->styles($this->html->style(array('app'))); ?>
+		<?= $this->optimize->styles() ?>
+
 		<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,900italic' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Vollkorn:400,400italic' rel='stylesheet' type='text/css'>
@@ -39,11 +42,15 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 		<script type="text/javascript" src="//www.google.com/jsapi"></script>
-		<script src="/js/foundation/foundation.js"></script>
-		<script src="/js/foundation/foundation.reveal.js"></script>
-		<script src="/js/plugins.js"></script>
-		<script src="/js/main.js"></script>
-		<?= $this->scripts() ?>
+		<?= $this->html->script("/js/foundation/foundation.js") ?>
+
+		<?= $this->html->script("/js/foundation/foundation.reveal.js") ?>
+
+
+		<?php $this->scripts($this->html->script('plugins.js') ) ?>
+		<?php $this->scripts($this->html->script('main.js') ) ?>
+
+		<?= $this->optimize->scripts() ?>
 
 		<?= $this->_render('element', 'analytics') ?>
 
