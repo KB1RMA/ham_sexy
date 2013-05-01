@@ -6,7 +6,7 @@ class Sexies extends \lithium\data\Model {
 
 	protected $_schema = array(
 		'_id' => array('type' => 'id', 'primary' => 'true'),
-		'filename' => array('type' => 'string'),
+		'file_name' => array('type' => 'string'),
 		'hash' => array('type' => 'string'),
 		'random' => array('type' => 'integer'),
 		'size' => array('type' => 'integer'),
