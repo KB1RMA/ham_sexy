@@ -8,6 +8,7 @@
 		</hgroup>
 		<nav>
 			<ul>
+				<li><a href="/latest">Latest Uploads</a></li>
 				<li><a class="button secondary" id="dropbox">Drop Image Here</a></li>
 			</ul>
 		</nav>
