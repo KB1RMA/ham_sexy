@@ -12,11 +12,10 @@
 				<input type="submit" class="button right" value="Post" />
 			</div>
 			<input type="hidden" name="id" value="<?= $sexies->_id ?>" />
-			<input type="hidden" name="submit-comment" />
 		</form>
 		<ul class="comments">
 		<?php if ( !empty($sexies->comments) ) : ?>
-			<? foreach ( $sexies->comments as $key=>$comment ) : ?>
+			<?if foreach ( $sexies->comments as $key=>$comment ) : ?>
 			<li>
 				<?= $comment->content ?>
 				<abbr class="date timeago" title="<?= date('c',$comment->createdAt) ?>"><?= date('F m, o',$comment->createdAt) ?></abbr>
