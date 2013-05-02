@@ -6,7 +6,13 @@
 			<img src="<?= $imageUrl ?>" />
 			<div class="row">
 				<div class="large-6 columns">
-					<p><?= $sexy->commentCount ?> comments</p>
+					<?php $comments = $sexy->commentCount; ?>
+					<p><?= $comments ?>
+					<?php if ($comments == 1 ) : ?>
+					 comment
+					<?php else : ?>
+					 comments
+					<?php endif ?></p>
 				</div>
 				<div class="large-6 columns">
 					<abbr class="date timeago" title="<?= date('c',$sexy->createdAt->sec) ?>"><?= date('F m, o',$sexy->createdAt->sec) ?></abbr>
