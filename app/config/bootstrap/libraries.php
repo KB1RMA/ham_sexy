@@ -121,5 +121,6 @@ Libraries::add('app', array('default' => true));
  * Add some plugins:
  */
 Libraries::add('li3_assets');
+Libraries::add('li3_pagination');
 
 ?>

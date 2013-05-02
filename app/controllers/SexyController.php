@@ -40,10 +40,19 @@ class SexyController extends \lithium\action\Controller {
 				));
 			}
 
+		}
+
+		return compact('sexies');
 	}
 
-	return compact('sexies');
-}
+	public function latest() {
+		$limit = 20;
+		$page = $this->request->page ?: 1;
+    $options = compact('limit', 'page');
+    $sexies = Sexies::find('all', $options);
+
+    return compact('sexies', 'options');
+	}
 
 	public function comment( $id = null ) {
 
@@ -68,7 +77,6 @@ class SexyController extends \lithium\action\Controller {
 			return $this->redirect(array(
 				'controller' => 'Sexies',
 				'action' => 'index',
-				'_id' => $sexies->_id,
 			));
 		}
 

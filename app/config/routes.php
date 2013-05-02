@@ -35,6 +35,8 @@ if ($locales = Environment::get('locales')) {
  */
 Router::connect('/upload', 'Sexy::upload');
 Router::connect('/comment', 'Sexy::comment');
+Router::connect('/latest', 'Sexy::latest');
+Router::connect('/latest/{:page:[0-9]+}', 'Sexy::latest');
 Router::connect('/edit/{:args}', 'Sexy::edit');
 Router::connect('/{:args}', 'Sexy::index');
 
