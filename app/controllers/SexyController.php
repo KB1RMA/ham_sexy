@@ -29,6 +29,7 @@ class SexyController extends \lithium\action\Controller {
 				'conditions' => array(
 					'random' => $greaterThan,
 				),
+				'order' => 'DESC',
 			));
 
 			// If the random integer is too high, try lower
@@ -37,6 +38,7 @@ class SexyController extends \lithium\action\Controller {
 					'conditions' => array(
 						'random' => $lessThan,
 					),
+					'order' => 'DESC',
 				));
 			}
 
@@ -50,6 +52,7 @@ class SexyController extends \lithium\action\Controller {
 		$page = $this->request->page ?: 1;
     $options = compact('limit', 'page');
     $sexies = Sexies::find('all', $options);
+		$sexies->sort('createdAt DESC');
 
     return compact('sexies', 'options');
 	}
