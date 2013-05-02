@@ -19,19 +19,31 @@ class SexyController extends \lithium\action\Controller {
 		} else {
 
 			// Otherwise, find a random image from the database
-			$count = 0;
-			while ( !$count ) {
+			$random = rand();
+
+			$greaterThan = array( '$gt' => $random );
+			$lessThan = array( '$lt' => $random );
+
+			// Try greater than integer
+			$sexies = Sexies::find('first', array(
+				'conditions' => array(
+					'random' => $greaterThan,
+				),
+			));
+
+			// If the random integer is too high, try lower
+			if ( !count($sexies) ) {
 				$sexies = Sexies::find('first', array(
 					'conditions' => array(
-						'random' => array( '$gte' => rand() ),
+						'random' => $lessThan,
 					),
 				));
-				$count = count($sexies);
 			}
-		}
 
-		return compact('sexies');
 	}
+
+	return compact('sexies');
+}
 
 	public function comment( $id = null ) {
 
