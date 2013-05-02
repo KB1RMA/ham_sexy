@@ -15,6 +15,7 @@
 		</form>
 		<ul class="comments">
 		<?php if ( !empty($sexies->comments) ) : ?>
+			<?php $sexies->comments->sort('createdAt DESC') ?>
 			<?php foreach ( $sexies->comments as $key=>$comment ) : ?>
 			<li>
 				<?= $comment->content ?>
