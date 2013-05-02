@@ -20,7 +20,7 @@
 				<?= $comment->content ?>
 				<abbr class="date timeago" title="<?= date('c',$comment->createdAt) ?>"><?= date('F m, o',$comment->createdAt) ?></abbr>
 			</li>
-			<? endforeach ?>
+			<?php endforeach ?>
 		<?php else : ?>
 			<li><em>No comments yet.</em></li>
 		<?php endif ?>
