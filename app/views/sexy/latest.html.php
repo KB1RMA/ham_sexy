@@ -1,6 +1,6 @@
 <ul class="latest-list large-block-grid-4">
 <?php foreach( $sexies as $sexy ) : ?>
-	<?php $imageUrl = '/images/' . $sexy->file_name ?>
+	<?php $imageUrl = '/images/' . $sexy->fileName ?>
 	<li>
 		<a href="/<?= $sexy->_id ?>" style="background-image:url(<?= $imageUrl ?>)">
 			<img src="<?= $imageUrl ?>" />
