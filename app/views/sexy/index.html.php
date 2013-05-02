@@ -29,6 +29,3 @@
 <?php else : ?>
 	<p class="text-center"><em>No image found</em></p>
 <?php endif ?>
-
-<?php $this->scripts($this->html->script('dragndrop.js')) ?>
-<?php $this->scripts($this->html->script('jquery.filedrop.js') ) ?>

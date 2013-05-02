@@ -49,6 +49,8 @@
 
 		<?php $this->scripts($this->html->script('plugins.js') ) ?>
 		<?php $this->scripts($this->html->script('main.js') ) ?>
+		<?php $this->scripts($this->html->script('dragndrop.js')) ?>
+		<?php $this->scripts($this->html->script('jquery.filedrop.js') ) ?>
 
 		<?= $this->optimize->scripts() ?>
 
