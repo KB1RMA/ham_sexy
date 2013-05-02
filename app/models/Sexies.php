@@ -37,7 +37,7 @@ class Sexies extends \lithium\data\Model {
 		$newFilePath = $this->originalPath . '/' . $newFileName;
 
 		if ( move_uploaded_file( $file['tmp_name'], $newFilePath ) ) {
-			$entity->filename = $newFileName;
+			$entity->fileName = $newFileName;
 			$entity->size = $file['size'];
 
 			if ( !$hash )

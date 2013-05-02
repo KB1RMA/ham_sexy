@@ -1,5 +1,5 @@
 <?php if ( ! empty($sexies) ) : ?>
-	<?php $imageUrl = '/images/' . $sexies->file_name ?>
+	<?php $imageUrl = '/images/' . $sexies->fileName ?>
 	<div class="large-7 columns">
 		<a class="image-link" href="<?= $imageUrl ?>" style="background-image:url(<?= $imageUrl ?>)">
 			<img src="<?= $imageUrl ?>" />
