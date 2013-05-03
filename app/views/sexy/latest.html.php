@@ -2,8 +2,10 @@
 <?php foreach( $sexies as $sexy ) : ?>
 	<?php $imageUrl = '/images/' . $sexy->fileName ?>
 	<li>
-		<a href="/<?= $sexy->_id ?>" style="background-image:url(<?= $imageUrl ?>)">
-			<img src="<?= $imageUrl ?>" />
+		<a href="/<?= $sexy->_id ?>">
+			<div class="img-container" style="background-image:url(<?= $imageUrl ?>)">
+				<img src="<?= $imageUrl ?>" />
+			</div>
 			<div class="row">
 				<div class="large-6 columns">
 					<?php $comments = $sexy->commentCount; ?>

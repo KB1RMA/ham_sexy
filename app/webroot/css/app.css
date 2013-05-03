@@ -2576,22 +2576,54 @@ body > header nav ul li a:hover {
   opacity: 0;
 }
 
-/* line 144, ../sass/app.scss */
+/* line 146, ../sass/app.scss */
+.latest-list li a {
+  display: block;
+}
+/* line 148, ../sass/app.scss */
+.latest-list li a .img-container {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+/* line 154, ../sass/app.scss */
+.latest-list li a .img-container img {
+  width: 100%;
+  opacity: 0;
+}
+/* line 159, ../sass/app.scss */
+.latest-list li a .date {
+  border: 0;
+  color: #666;
+  display: block;
+  cursor: default;
+  text-align: right;
+}
+
+/* line 170, ../sass/app.scss */
 .comments {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 148, ../sass/app.scss */
+/* line 174, ../sass/app.scss */
 .comments li {
   padding-top: 5px;
   border-top: solid 1px #ccc;
 }
-/* line 149, ../sass/app.scss */
+/* line 175, ../sass/app.scss */
 .comments li p {
   margin-bottom: 5px;
 }
-/* line 151, ../sass/app.scss */
+/* line 177, ../sass/app.scss */
 .comments .date {
   display: block;
   border-bottom: 0;
@@ -2601,7 +2633,7 @@ body > header nav ul li a:hover {
   cursor: default;
 }
 
-/* line 161, ../sass/app.scss */
+/* line 187, ../sass/app.scss */
 #progress-shade {
   position: fixed;
   top: 0;
@@ -2613,7 +2645,7 @@ body > header nav ul li a:hover {
   opacity: 0.6;
   z-index: 999;
 }
-/* line 171, ../sass/app.scss */
+/* line 197, ../sass/app.scss */
 #progress-shade .progress {
   position: absolute;
   top: 50%;
