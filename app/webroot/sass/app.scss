@@ -192,6 +192,7 @@ body > header {
 		& li {
 			display: inline-block;
 			margin: 0 5px;
+			&.active a { color: #4e1550; cursor: default; }
 		}
 	}
 }

@@ -2644,8 +2644,13 @@ body > header nav ul li a:hover {
   display: inline-block;
   margin: 0 5px;
 }
+/* line 195, ../sass/app.scss */
+.pagination ul li.active a {
+  color: #4e1550;
+  cursor: default;
+}
 
-/* line 199, ../sass/app.scss */
+/* line 200, ../sass/app.scss */
 #progress-shade {
   position: fixed;
   top: 0;
@@ -2657,7 +2662,7 @@ body > header nav ul li a:hover {
   opacity: 0.6;
   z-index: 999;
 }
-/* line 209, ../sass/app.scss */
+/* line 210, ../sass/app.scss */
 #progress-shade .progress {
   position: absolute;
   top: 50%;
