@@ -19,7 +19,7 @@ class SexyController extends \lithium\action\Controller {
 		} else {
 
 			// Otherwise, find a random image from the database
-			$random = rand();
+			$random = rand(0, 10000);
 
 			$greaterThan = array( '$gt' => $random );
 			$lessThan = array( '$lt' => $random );
@@ -29,7 +29,6 @@ class SexyController extends \lithium\action\Controller {
 				'conditions' => array(
 					'random' => $greaterThan,
 				),
-				'order' => 'DESC',
 			));
 
 			// If the random integer is too high, try lower
