@@ -97,6 +97,7 @@ Filters::apply('app\models\Sexies', 'save', function($self, $params, $chain ) {
 	if ( !$params['entity']->exists() ) {
 		$params['data']['random']    = rand();
 		$params['data']['createdAt'] = time();
+		$params['data']['ip'] = $_SERVER['REMOTE_ADDR'];
 	}
 
 	return $chain->next($self, $params, $chain);
