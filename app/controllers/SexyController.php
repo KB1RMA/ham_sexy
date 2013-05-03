@@ -50,9 +50,9 @@ class SexyController extends \lithium\action\Controller {
 	public function latest() {
 		$limit = 20;
 		$page = $this->request->page ?: 1;
-    $options = compact('limit', 'page');
+		$order = array('createdAt' => 'DESC');
+    $options = compact('limit', 'page', 'order');
     $sexies = Sexies::find('all', $options);
-		$sexies->sort('createdAt DESC');
 
     return compact('sexies', 'options');
 	}
