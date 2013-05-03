@@ -2633,7 +2633,19 @@ body > header nav ul li a:hover {
   cursor: default;
 }
 
-/* line 187, ../sass/app.scss */
+/* line 188, ../sass/app.scss */
+.pagination ul {
+  list-style: none;
+  margin: 20px auto;
+  display: inline-block;
+}
+/* line 192, ../sass/app.scss */
+.pagination ul li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/* line 199, ../sass/app.scss */
 #progress-shade {
   position: fixed;
   top: 0;
@@ -2645,7 +2657,7 @@ body > header nav ul li a:hover {
   opacity: 0.6;
   z-index: 999;
 }
-/* line 197, ../sass/app.scss */
+/* line 209, ../sass/app.scss */
 #progress-shade .progress {
   position: absolute;
   top: 50%;

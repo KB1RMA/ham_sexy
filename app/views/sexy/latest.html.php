@@ -25,9 +25,10 @@
 <?php endforeach ?>
 </ul>
 
-<?php if ($this->pagination->create($sexies, $options + array('start' => false))->count() > 1) : ?>
-<?= $this->pagination->pre(); ?>
-<?= $this->pagination->pages(); ?>
-<?= $this->pagination->post(); ?>
-<?= $this->pagination->end(); ?>
-<?php endif; ?>
+<div class="pagination text-center">
+<?= $this->pagination->create($sexies, $options) ?>
+		<?= $this->pagination->pre(); ?>
+		<?= $this->pagination->pages(); ?>
+		<?= $this->pagination->post(); ?>
+		<?= $this->pagination->end(); ?>
+</div>

@@ -184,6 +184,18 @@ body > header {
 	}
 }
 
+.pagination {
+	& ul {
+		list-style: none; 
+		margin: 20px auto;
+		display: inline-block;
+		& li {
+			display: inline-block;
+			margin: 0 5px;
+		}
+	}
+}
+
 #progress-shade {
 	position: fixed;
 	top: 0;
